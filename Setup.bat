@@ -1,10 +1,17 @@
 @echo off
-title Server Setup
+title PaperMC Server Setup
 
 :: Dynamically set the base directories based on the script location
 set "scriptDir=%~dp0"
-set "paperDir=%scriptDir%paper.jar"
+set "paperDir=%scriptDir%PaperMC Files"
 set "serverBaseDir=%scriptDir%Server"
+
+:: Check if the PaperMC Files folder exists, if not, notify user and exit
+if not exist "%paperDir%" (
+    echo PaperMC files are missing! Please run install-papermc.bat first.
+    pause
+    exit /b
+)
 
 :: Navigate to the Paper directory
 cd "%paperDir%"
@@ -24,22 +31,20 @@ set /p "version=Enter the Paper version you want to use (e.g., paper-1.20.4-499.
 
 :: Check if the chosen version exists
 if not exist "%version%" (
-    echo The chosen version does not exist.
+    echo The chosen version does not exist. Please ensure the file is in the PaperMC Files folder.
     pause
     exit /b
 )
 
 :: Ask for the server name
 set "serverName="
-set /p "serverName=Enter the name for your server: "
+set /p "serverName=Enter the name for your server (e.g., MyMinecraftServer): "
 
-:: Create the server folder
+:: Create the server folder if it doesn't exist
 set "serverDir=%serverBaseDir%\%serverName%"
-mkdir "%serverDir%"
-if errorlevel 1 (
-    echo Failed to create the server folder. Exiting...
-    pause
-    exit /b
+if not exist "%serverDir%" (
+    echo Creating server folder: %serverDir%
+    mkdir "%serverDir%"
 )
 
 :: Copy the Paper file to the server folder
@@ -65,11 +70,11 @@ set /p "maxRAM=Enter the maximum RAM for the server (e.g., 2G or 1024M): "
 ) > "%serverDir%\run.bat"
 
 :: Completion message
-echo Setup complete!
-echo Your server is located at "%serverDir%"
-echo.
+echo Server setup complete!
+echo Your server is located at: "%serverDir%"
+echo You can now run the server using the run.bat file.
 
-:: Ask if the user wants to run the server
+:: Ask if the user wants to run the server immediately
 set "runNow="
 set /p "runNow=Do you want to start the server now? (Y/N): "
 if /i "%runNow%"=="Y" (
