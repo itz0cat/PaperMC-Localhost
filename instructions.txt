@@ -1,0 +1,45 @@
+===============================================
+              Minecraft PaperMC Server Setup
+                Instructions Guide
+===============================================
+
+Welcome to the Minecraft PaperMC Server Setup! 
+Follow these steps to get your PaperMC server up and running.
+
+  Step 1: Download and Install PaperMC
+1. Download the `install-papermc.bat` file and place it in an empty directory on your computer.
+2. Run `install-papermc.bat` to download the required PaperMC files. 
+   - The script will download the selected Minecraft version of PaperMC and save it in the "PaperMC Files" folder.
+
+Step 2: Setup the Server
+1. Download the `setup.bat` file and place it in the same directory as `install-papermc.bat`.
+2. Run `setup.bat` to start the server setup process.
+   - The script will prompt you to:
+     a) Choose a PaperMC version (e.g., paper-1.20.4-499.jar).
+     b) Choose a server name (e.g., MyMinecraftServer).
+     c) Specify the minimum and maximum RAM allocation (e.g., 1G or 2G).
+3. Once setup is complete, the server files will be created in a folder named after your chosen server name.
+4. A `run.bat` file will be generated in the server folder to start your Minecraft server.
+
+  Step 3: Start Your Server
+1. Open the server folder you just created.
+2. Double-click the `run.bat` file to launch your server.
+   - The server console will open, and your PaperMC server will begin running.
+
+  Step 4: Enjoy Your Server
+- You can now join your server using your Minecraft client by connecting to `localhost` or `127.0.0.1`.
+- You can also configure the server settings by editing the `server.properties` file in the server folder.
+
+  Troubleshooting:
+- If the script fails to download the PaperMC file or the version is invalid, ensure your internet connection is working and try again.
+- If the `run.bat` file does not start the server, check the server's logs for any error messages and ensure your Java installation is up to date.
+
+  Additional Notes:
+- Make sure you have Java 17 or newer installed to run the PaperMC server.
+- You may need to install `curl` on your system if it's not available. You can get it from https://curl.se/download.html.
+
+For further help, feel free to reach out to the community or refer to the PaperMC documentation at https://papermc.io.
+
+Happy Minecrafting!
+
+===============================================
