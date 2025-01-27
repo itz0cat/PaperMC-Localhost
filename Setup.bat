@@ -1,6 +1,27 @@
 @echo off
 title PaperMC Server Setup
 
+:: Enable ANSI escape codes for colors
+cls
+echo.
+
+:: Display "Itz0Cat" in big letters with cyan color
+echo [36m
+echo  _____ _        ___   _____      _   
+echo |_   _| |      / _ \ / ____|    | |  
+echo   | | | |_ ___| | | | |     __ _| |_ 
+echo   | | | __|_  / | | | |    / _` | __|
+echo  _| |_| |_ / /| |_| | |___| (_| | |_ 
+echo |_____|\__/___|\___/ \_____\__,_|\__|
+                                      
+                                       
+echo.
+echo Join my Discord server: https://dsc.gg/itz0cat
+echo.
+
+:: Open a browser tab with the link
+start https://dsc.gg/itz0cat
+
 :: Dynamically set the base directories based on the script location
 set "scriptDir=%~dp0"
 set "paperDir=%scriptDir%PaperMC Files"
