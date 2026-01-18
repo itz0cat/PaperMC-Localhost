@@ -2,7 +2,6 @@
 title PaperMC Server Setup
 
 echo Join my Discord server: https://dsc.gg/itz0cat
-start https://discord.gg/dRgRQea6P8
 
 :: Dynamically set the base directories based on the script location
 set "scriptDir=%~dp0"
@@ -86,3 +85,4 @@ if /i "%runNow%"=="Y" (
 )
 
 pause
+
